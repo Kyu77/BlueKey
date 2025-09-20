@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestion de locations & Sous-location</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Logo fixe en haut à droite -->
+  <div id="fixed-logo" class="fixed-logo">
+    <img src="ChatGPT Image Sep 20, 2025, 04_18_44 PM.png" alt="Logo" />
+  </div>
+
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <a href="#hero" class="logo">BlueKey</a>
+      <div class="navbar-logo">
+        <img src="ChatGPT Image Sep 20, 2025, 04_18_44 PM.png" alt="Logo" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Confiez votre logement, je m’occupe du reste</h1>
+      <p>Gestion de locations courtes durées et solutions de sous-location avec loyer garanti.</p>
+      <a href="#contact" class="btn">Contactez-moi dès aujourd’hui</a>
+    </div>
+  </header>
+
+  <!-- QUI SUIS-JE ? -->
+  <section id="about" class="section">
+    <h2>Qui suis-je ?</h2>
+    <p>
+      Bonjour, je m’appelle Hugo.<br />
+      Passionné par l’immobilier et la relation client, j’accompagne les propriétaires qui veulent rentabiliser leur logement sans stress.<br />
+      Mon objectif : simplifier la gestion, optimiser vos revenus et assurer une relation de confiance durable.
+    </p>
+  </section>
+
+  <!-- MES SERVICES -->
+  <section id="services" class="section">
+    <h2>Mes services</h2>
+    <div class="services-grid">
+      <article class="service-card">
+         <h3> Conciergerie <br>(gestion locative courte durée)</h3> 
+        <ul>
+          <li>Création & optimisation des annonces (Airbnb, Booking, etc.)</li>
+          <li>Communication avec les voyageurs 24/7</li>
+          <li>Gestion des entrées / sorties</li>
+          <li>Ménage & linge</li>
+          <li>Suivi et reporting des performances</li>
+        </ul>
+        <p><strong>Avantage pour le propriétaire :</strong> maximiser ses revenus sans rien gérer</p>
+      </article>
+      <article class="service-card">
+        <h3> Sous-location professionnelle <br>(loyer garanti)</h3>
+        <ul>
+          <li>Signature d’un bail clair avec accord écrit</li>
+          <li>Paiement d’un loyer fixe chaque mois (même si le logement n’est pas loué)</li>
+          <li>Entretien & suivi du logement assurés</li>
+          <li>Assurance adaptée</li>
+        </ul>
+        <p><strong>Avantage pour le propriétaire :</strong> sécurité d’un revenu garanti, zéro gestion</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- POURQUOI ME FAIRE CONFIANCE ? -->
+  <section id="trust" class="section">
+    <h2>Pourquoi me faire confiance ?</h2>
+    <ul class="trust-list">
+      <li>✅ Disponibilité & transparence</li>
+      <li>✅ Expérience en digital & optimisation d’annonces</li>
+      <li>✅ Accompagnement personnalisé</li>
+      <li>✅ Contrats clairs & respect des règles</li>
+    </ul>
+  </section>
+
+  <!-- EXEMPLE DE RÉSULTATS -->
+  <section id="results" class="section">
+    <h2>Exemple de résultats</h2>
+    <p>
+      📊 Exemple : un studio de 25 m² dans <em>votre ville</em> loué 650€/mois en bail classique peut générer jusqu’à 1 200€ / mois en location courte durée, selon la saison.<br />
+      En conciergerie, le propriétaire encaisse la majorité de ce revenu sans aucune gestion.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    Numéro de téléphone  : 07 83 66 27 99 <br>
+    Adresse email : hugo.de.castro15@gmail.com <br><br>
+    <p>Discutons de votre projet gratuitement.</p>
+    <form action="mailto:hugo.de.castro15@gmail.com" method="post" enctype="text/plain" class="contact-form">
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <input type="tel" name="phone" placeholder="Votre téléphone" />
+      <textarea name="message" rows="5" placeholder="Votre message"></textarea>
+      <button type="submit" class="btn">Discutons de votre projet gratuitement</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 BlueKey – Tous droits réservés
+  </footer>
+
+  <script>
+    // Navbar show only after hero fully scrolled past using scroll event with debounce
+    const navbar = document.getElementById('navbar');
+    const hero = document.getElementById('hero');
+    const fixedLogo = document.getElementById('fixed-logo');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY >= hero.offsetHeight) {
+            navbar.classList.add('navbar-visible');
+            fixedLogo.classList.add('logo-hidden');
+          } else {
+            navbar.classList.remove('navbar-visible');
+            fixedLogo.classList.remove('logo-hidden');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>
